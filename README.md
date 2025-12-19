@@ -1,53 +1,45 @@
-# css-clamp README
+# CSS Clamp Extension
 
-This is the README for your extension "css-clamp". After writing up a brief description, we recommend including the following sections.
+Easily generate fluid typography `clamp()` functions in CSS.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Convert a set of numbers into a linear interpolation `clamp()` function.
 
-For example if there is an image subfolder under your extension project workspace:
+### Usage
 
-\!\[feature X\]\(images/feature-x.png\)
+1.  **Type your values**:
+    *   **4 Values**: `MinFont MaxFont MinWidth MaxWidth` (e.g., `16 40 900 1600`)
+    *   **2 Values**: `MinFont MaxFont` (e.g., `16 40`). This uses the default viewport widths configured in settings.
+2.  **Trigger the command**:
+    *   Place your cursor anywhere inside the values (no selection needed).
+    *   Press `Alt+Shift+C` (Mac: `Opt+Shift+C`).
+    *   Or run the command `Convert to Clamp` from the Command Palette.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### Examples
 
-## Requirements
+*   `16 40 900 1600` -> `clamp(1.1429rem, -1.0607rem + 3.4286vw, 2.8571rem)`
+*   `16 40` (with defaults 500-1500) -> `clamp(1.1429rem, 0.1829rem + 2.4vw, 2.8571rem)`
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Supports space or comma separators.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+*   `clampExtension.globalMinViewport`: Default minimum viewport width in pixels (default: `992`). Used when only 2 values are provided.
+*   `clampExtension.globalMaxViewport`: Default maximum viewport width in pixels (default: `1920`). Used when only 2 values are provided.
+*   `clampExtension.baseFontSize`: Base font size in pixels for `rem` conversion (default: `16`).
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
+Initial release with support for:
+*   4-value input (MinFont, MaxFont, MinWidth, MaxWidth)
+*   2-value input (MinFont, MaxFont) using configurable defaults
+*   Space and comma separators
+*   Smart cursor detection (no selection required)
 
 ## Working with Markdown
 

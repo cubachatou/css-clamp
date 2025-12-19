@@ -2,6 +2,10 @@
   "name": "css-clamp",
   "displayName": "CSS Clamp",
   "description": "Generates fluid typography clamp() functions.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cubachatou/css-clamp"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.107.0"

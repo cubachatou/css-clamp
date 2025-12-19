@@ -1,0 +1,21 @@
+/* Place cursor inside the values and run the command (Alt+Shift+C) */
+
+/* 4 values: minFont maxFont minWidth maxWidth */
+.test-4-values {
+  font-size: 16 40 900 1600;
+}
+
+/* 2 values: minFont maxFont (uses defaults 500, 1500) */
+.test-2-values {
+  font-size: 16 40;
+}
+
+/* Comma separated */
+.test-comma {
+  font-size: 16, 40, 900, 1600;
+}
+
+/* Decimal values */
+.test-decimal {
+  font-size: 1.5 2.5 800 1200;
+}

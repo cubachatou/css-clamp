@@ -1,0 +1,63 @@
+{
+  "name": "css-clamp",
+  "displayName": "CSS Clamp",
+  "description": "Generates fluid typography clamp() functions.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "css-clamp.convert",
+        "title": "Convert to Clamp"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "css-clamp.convert",
+        "key": "alt+shift+c",
+        "mac": "opt+shift+c",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "CSS Clamp",
+      "properties": {
+        "clampExtension.globalMinViewport": {
+          "type": "number",
+          "default": 992,
+          "description": "Default minimum viewport width (px) when only 2 values are provided."
+        },
+        "clampExtension.globalMaxViewport": {
+          "type": "number",
+          "default": 1920,
+          "description": "Default maximum viewport width (px) when only 2 values are provided."
+        },
+        "clampExtension.baseFontSize": {
+          "type": "number",
+          "default": 16,
+          "description": "Base font size (px) for rem conversion."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.107.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "eslint": "^9.39.1",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}

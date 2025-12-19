@@ -1,5 +1,6 @@
 {
   "name": "css-clamp",
+  "publisher": "Cubachatou",
   "displayName": "CSS Clamp",
   "description": "Generates fluid typography clamp() functions.",
   "icon": "logo.png",
